@@ -6,6 +6,7 @@
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- chart -->
+        <!-- no,tanggalspb,no spb,cabang,unit,peminta,nama spb -->
         <!-- ============================================================== -->
         <div class="row">
             <div class="col-md-12">
@@ -21,17 +22,16 @@
                                 <thead class="bg-secondary">
                                     <tr>
                                         <th width="5%" class="text-white fw-bold">No</th>
-                                        <th class="text-white fw-bold">Entity</th>
-                                        <th class="text-white fw-bold">Tanggal</th>
-                                        <th class="text-white fw-bold">Kode</th>
-                                        <th class="text-white fw-bold">Unit</th>
+                                        <th class="text-white fw-bold">Tgl PBJ</th>
+                                        <th class="text-white fw-bold">No PBJ</th>
+                                        <th class="text-white fw-bold">Nama PBJ</th>
                                         <th class="text-white fw-bold">Petugas</th>
+                                        {{-- <th class="text-white fw-bold">Nama PBJ</th> --}}
                                         <th class="text-white fw-bold">Status</th>
-                                        <th width="15%" class="text-white fw-bold"><i class="fa fa-cog"></i></th>
+                                        <th width="5%" class="text-white fw-bold"><i class="fa fa-cog"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                 </tbody>
                             </table>
                         </div>
@@ -44,6 +44,7 @@
         <!-- ============================================================== -->
     </div>
     @includeIf('permintaan.form-permintaan-detail')
+    @includeIf('permintaan.galeri-pdf')
 @endsection
 
 @push('styles')
@@ -118,22 +119,27 @@
                         sortable: false
                     },
                     {
-                        data: 'nama_branch'
-                    },
-                    {
-                        data: 'tanggal_permintaan'
+                        data: 't_permintaan'
                     },
                     {
                         data: 'kode_permintaan'
                     },
                     {
-                        data: 'nama_department'
+                        data: 'nama_permintaan'
                     },
+                    // {
+                    //     data: 'nama_department'
+                    // },
                     {
                         data: 'nama_user_input'
                     },
+                    // {
+                    //     data: 'nama_permintaan'
+                    // },
                     {
-                        data: 'status_approve'
+                        data: 'status',
+                        searchable: false,
+                        sortable: false
                     },
                     {
                         data: 'aksi',
@@ -173,44 +179,38 @@
         }
 
         function detailData(url) {
+            // $deceurl = decode(url)
+            // location.replace($deceurl);
+            // $('#modal-form').modal('show');
+            // $('#modal-form .modal-title').text('Detail Data');
 
+            // table = $("#zero_config_detail").DataTable({
+            //     processing: true,
+            //     autoWidth: false,
+            //     paging: true,
+            //     searching: true,
 
-            $('#modal-form').modal('show');
-            $('#modal-form .modal-title').text('Detail Data');
+            //     ajax: {
+            //         url: url,
+            //     },
+            //     columns: [{
+            //             data: 'checklist',
+            //             searchable: false,
+            //             sortable: false
+            //         },
+            //         {
+            //             data: 'kode_barang'
+            //         },
+            //         {
+            //             data: 'nama_barang'
+            //         },
+            //         {
+            //             data: 'jumlah'
+            //         },
+            //     ]
+            // });
 
-            table = $("#zero_config_detail").DataTable({
-                processing: true,
-                autoWidth: false,
-                paging: true,
-                searching: true,
-
-                ajax: {
-                    url: url,
-                },
-                columns: [{
-                        data: 'checklist',
-                        searchable: false,
-                        sortable: false
-                    },
-                    {
-                        data: 'kode_barang'
-                    },
-                    {
-                        data: 'nama_barang'
-                    },
-                    {
-                        data: 'jumlah'
-                    },
-                    // {
-                    //     data: 'aksi',
-                    //     searchable: false,
-                    //     sortable: false
-                    // },
-
-                ]
-            });
-
-            $("#zero_config_detail").DataTable().destroy();
+            // $("#zero_config_detail").DataTable().destroy();
             // $.get(url)
             //     .done((response) => {
             //         console.log(response);
@@ -268,6 +268,13 @@
 
         function searchBarang() {
             $('#modal-form').modal('show');
+            $('.form-group [name=nama_barang]').prop('readonly', true);
+        }
+
+        function toGaleriPdf() {
+            // alert('ke arah route upload');
+            // $('#modal-galeri-pdf').modal('show');
+            $('#modal-galeri-pdf .modal-title').text('File Upload');
             $('.form-group [name=nama_barang]').prop('readonly', true);
         }
     </script>

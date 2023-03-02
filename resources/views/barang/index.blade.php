@@ -4,58 +4,6 @@
 @endsection
 @section('content')
     <div class="container-fluid">
-
-        <!-- ============================================================== -->
-        <!-- Sales Cards  -->
-        <!-- ============================================================== -->
-        <div class="row">
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-danger text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-cyan text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-success text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-warning text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-        </div>
-
         <!-- ============================================================== -->
         <!-- chart -->
         <!-- ============================================================== -->
@@ -65,7 +13,8 @@
                     <div class="box">
                         <button onclick="addForm('{{ route('barang.store') }}')"
                             class="btn btn-success xs btn-flat text-white"><i class="fa fa-plus-circle"></i>
-                            Tambah</button>
+                            Tambah
+                        </button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -76,7 +25,7 @@
                                         <th>Kode</th>
                                         <th>Nama</th>
                                         <th>Kategori</th>
-                                        <th>Kategori Detail</th>
+                                        {{-- <th>Kategori Detail</th> --}}
                                         <th>Stok</th>
                                         <th>Tipe</th>
                                         <th>User Input</th>
@@ -102,6 +51,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('matrix-admin/assets/extra-libs/multicheck/multicheck.css') }}" />
     <link href="{{ asset('matrix-admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}"
         rel="stylesheet" />
+
+
 @endpush
 
 @push('scripts')
@@ -156,9 +107,9 @@
                     {
                         data: 'nama_kategori'
                     },
-                    {
-                        data: 'nama_kategori_detail'
-                    },
+                    // {
+                    //     data: 'nama_kategori_detail'
+                    // },
                     {
                         data: 'stok'
                     },
@@ -184,6 +135,8 @@
                             data: $('#modal-form form').serialize(),
                         })
                         .done((response) => {
+                            console.log(response);
+                            alert('data berhasil disimpan');
                             $('#modal-form').modal('hide');
                             table.ajax.reload();
                         })
@@ -194,6 +147,44 @@
                         });
                 }
             })
+
+            $("#modal-form [name=premasterbarang]").on('click', function(e) {
+                // if (!e.preventDefault()) {
+                    let checked =  $("#modal-form [name=premasterbarang]:checked").val();
+                        if(checked == 'on'){
+                            $("#modal-form #nama_barang").attr('placeholder','(Pre)');
+                        }else{
+                            $("#modal-form #nama_barang").attr('placeholder','');
+                        }
+                // }
+            });
+
+            // $("#modal-form [name=nama_barang]").mouseout(function(){
+            //     let checked =  $("#modal-form [name=premasterbarang]:checked").val();
+            //             if(checked == 'on'){
+            //                 let thisval = $(this).val();
+            //                 // let cekpreexist = thisval.substring(0, 4);
+            //                 let cekpreexist = thisval.substring(thisval.length - 5);
+
+            //                     if(cekpreexist == '(Pre)'){
+            //                         $(this).val('');
+            //                         // $(this).val(thisval+'(Pre)');
+            //                     }else{
+            //                         $(this).val('');
+            //                         $(this).val(thisval+'(Pre)');
+            //                     }
+            //             }else{
+            //                 let thisval = $(this).val();
+            //                 let cekpreexist = thisval.substring(thisval.length - 5);
+            //                     if(cekpreexist == '(Pre)'){
+            //                         $(this).val('');
+            //                     }else{
+            //                         $(this).val(thisval);
+            //                     }
+            //             }
+
+
+            // });
         });
 
         function addForm(url) {

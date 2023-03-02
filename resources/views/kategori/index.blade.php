@@ -74,7 +74,7 @@
                                     <tr>
                                         <th width="5%">No</th>
                                         <th>Kategori</th>
-                                        <th width="15%"><i class="fa fa-cog"></i></th>
+                                        {{-- <th width="15%"><i class="fa fa-cog"></i></th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -143,11 +143,11 @@
                     {
                         data: 'nama_kategori'
                     },
-                    {
-                        data: 'aksi',
-                        searchable: false,
-                        sortable: false
-                    },
+                    // {
+                    //     data: 'aksi',
+                    //     searchable: false,
+                    //     sortable: false
+                    // },
                 ]
             });
 

@@ -23,7 +23,29 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('admin'),
                 'level' => 0,
                 'management' => 1,
-                'role_id' => 9
+                'role_id' => 9,
+                'id_branch' => 1,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'User Pondok Bambu',
+                'username' => 'userpb',
+                'email' => 'userpb@aridiachand.com',
+                'password' => bcrypt('userpb'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'User Depok',
+                'username' => 'userdpk',
+                'email' => 'userdpk@aridiachand.com',
+                'password' => bcrypt('userdpk'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
             ],
             [
                 'name' => 'Taufik',
@@ -31,8 +53,51 @@ class UserTableSeeder extends Seeder
                 'email' => 'user1@aridiachand.com',
                 'password' => bcrypt('user1'),
                 'level' => 1,
-                'management' => 2
-            ]
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'Taufik',
+                'username' => 'user1',
+                'email' => 'user1@aridiachand.com',
+                'password' => bcrypt('user1'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'Taufik',
+                'username' => 'user1',
+                'email' => 'user1@aridiachand.com',
+                'password' => bcrypt('user1'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'Taufik',
+                'username' => 'user1',
+                'email' => 'user1@aridiachand.com',
+                'password' => bcrypt('user1'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+            [
+                'name' => 'Taufik',
+                'username' => 'user1',
+                'email' => 'user1@aridiachand.com',
+                'password' => bcrypt('user1'),
+                'level' => 1,
+                'management' => 2,
+                'id_branch' => 3,
+                'id_department' => 1
+            ],
+
         );
 
         array_map(function (array $user) {

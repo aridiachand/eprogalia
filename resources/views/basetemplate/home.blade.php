@@ -10,50 +10,27 @@
         <!-- ============================================================== -->
         <div class="row">
             <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
+            <div class="col-md-6 col-lg-6 col-xlg-3">
                 <div class="card card-hover">
                     <div class="box bg-danger text-center">
                         <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
+                            <i class="mdi mdi-comment-account"></i>
                         </h1>
                         <h6 class="text-white">Pemintaan</h6>
                     </div>
                 </div>
             </div>
             <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-cyan text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
+            <div class="col-md-6 col-lg-6 col-xlg-3" onclick="window.location({{ route('approval.index') }})">
                 <div class="card card-hover">
                     <div class="box bg-success text-center">
                         <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
+                            <i class="mdi mdi-briefcase-check"></i>
                         </h1>
-                        <h6 class="text-white">Pemintaan</h6>
+                        <h6 class="text-white">Approval</h6>
                     </div>
                 </div>
             </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3 col-xlg-3">
-                <div class="card card-hover">
-                    <div class="box bg-warning text-center">
-                        <h1 class="font-light text-white">
-                            <i class="mdi mdi-receipt"></i>
-                        </h1>
-                        <h6 class="text-white">Pemintaan</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
         </div>
 
         <!-- ============================================================== -->

@@ -4,7 +4,7 @@
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <!-- Logo icon -->
                 <b class="logo-icon ps-2">
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -57,17 +57,19 @@
                 <!-- ============================================================== -->
                 <!-- create new -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                        <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item pt-4">
+                    {{-- <span class="d-none d-md-block text-white fw-bold"> --}}
+                    <p class="p-0 m-0 text-dark fw-bold">@yield('judul-header')</p>
+                    @yield('judul-header-breadcrumb')
+
+                    {{-- <i class="fa fa-angle-down"></i> --}}
+                    {{-- </span> --}}
+                    {{-- <span class="d-block d-md-none"><i class="fa fa-plus"></i></span> --}}
+                    {{-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
                             <a class="dropdown-item" href="#">Barang</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </li>
             </ul>
             <!-- ============================================================== -->
@@ -80,13 +82,23 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>{{ Str::ucfirst(auth()->user()->name) }}</span>
-                        <i class="fa fa-user px-2"></i>
+                        <span class="text-white fw-bold">{{ Str::ucfirst(auth()->user()->name) }}</span>
+                        <i class="fa fa-user px-2 text-white"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-power-off me-1 ms-1"></i>
                             Logout</a>
                     </ul>
+                    {{-- <span class="d-flex flex-column">
+                        <span>
+                            sadasdasd
+                        </span>
+                    </span> --}}
+                    {{-- <div class="d-flex flex-column bd-highlight mb-3">
+                        <div class="p-2 bd-highlight">Flex item 1</div>
+                        <div class="p-2 bd-highlight">Flex item 2</div>
+                        <div class="p-2 bd-highlight">Flex item 3</div>
+                    </div> --}}
                 </li>
                 <!-- ============================================================== -->
                 <!-- User profile and search -->

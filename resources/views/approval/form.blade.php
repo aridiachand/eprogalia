@@ -7,35 +7,60 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modal-formLabel">Modal title</h5>
+                <div class="row">
+                    <div>
+                        <h6>No PBJ :</h6>
+                    </div>
+                    <div>
+                        <h5 class="modal-no-permintaan"></h5>
+                    </div>
+                    <h5 hidden class="modal-title" id="modal-formLabel"></h5>
+                </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="table-responsive" style="height: 200px !important;">
-                    <table id="zero_config_add" class="table table-striped table-bordered">
+                <div class="table-responsive">
+                    <table id="approval_detail_item" class="table table-striped table-bordered">
                         <thead class="bg-secondary">
                             <tr>
-                                <th width="5%" class="text-white fw-bold">ID</th>
-                                <th class="text-white fw-bold">Kode barang</th>
-                                <th class="text-white fw-bold">Nama barang</th>
-                                <th width="15%" class="text-white fw-bold"><i class="fa fa-cog"></i></th>
+                                <th hidden class="text-white">No Permintaan</th>
+                                <th class="text-white">ID Barang</th>
+                                <th class="text-white">Nama Barang</th>
+                                <th class="text-white">Qty</th>
+                                <th class="text-white">Harga</th>
+                                <th class="text-white">Keterangan</th>
+                                <th class="text-white">Action</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-                            @foreach ($barang as $br)
-                                <tr id="tr_barang">
-                                    <td class="td_id_barang">{{ $br->id_barang }}</td>
-                                    <td class="td_kode_barang">{{ $br->kode_barang }}</td>
-                                    <td class="td_nama_barang">{{ $br->nama_barang }}</td>
-                                    <td><button class="btn btn-success btn-flat xs btnSelect"><i
-                                                class="fa fa-plus-circle text-white"></i></button></td>
-                                </tr>
-                            @endforeach
+                        <tbody id="tbody_approval_detail_item">
                         </tbody>
 
                     </table>
                 </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label for="" class="mb-md-0"><span>Note</span></label>
+                        <div class="col-sm-12">
+                            <textarea class="notes form-control" id="notes"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-11">
+                        <button id="submit_approval_detail_item_approve"
+                            class='reject col-md-1 btn btn-sm btn-flat btn-success text-white'>Approve</button>
+                        <button id="submit_approval_detail_item_hold"
+                            class='reject col-md-1 btn btn-sm btn-flat btn-warning text-white'>Hold</button>
+                        <button id="submit_approval_detail_item_reject"
+                            class='reject col-md-1 btn btn-sm btn-flat btn-danger text-white'>Reject</button>
+                    </div>
+                </div>
+                {{-- <div id="submit_approval_detail_item_reject">
+                </div>
+                <div id="submit_approval_detail_item_hold">
+                </div>
+                <div id="submit_approval_detail_item_approve">
+                </div> --}}
             </div>
             <div class="modal-footer">
                 <button class="btn btn-sm btn-flat btn-secondary" data-bs-dismiss="modal">Close</button>

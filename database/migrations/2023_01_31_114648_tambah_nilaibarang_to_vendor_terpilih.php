@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kategori_tipe', function (Blueprint $table) {
-            $table->increments('id_kategori_tipe');
-            $table->string('kode_kategori_tipe');
-            $table->string('nama_kategori_tipe');
-            $table->timestamps();
+        Schema::table('vendor_terpilih', function (Blueprint $table) {
+            $table->integer('nilai_barang')->default(0);
+            $table->integer('nilai_barang_update')->default(0);
+            $table->integer('qty_barang')->default(0);
         });
     }
 
@@ -28,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('vendor_terpilih', function (Blueprint $table) {
+            //
+        });
     }
 };

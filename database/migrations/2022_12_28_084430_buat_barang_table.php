@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id_barang');
             $table->integer('id_kategori');
             $table->integer('id_kategori_detail');
+            $table->integer('id_kategori_barang');
             $table->string('kode_barang')->unique();
             $table->string('nama_barang');
             $table->string('merk_barang');

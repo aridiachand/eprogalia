@@ -39,64 +39,69 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
+            {{-- <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">@yield('namepage')</h4>
                         <div class="ms-auto text-end">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        {{ Str::ucfirst(Request::segment(1)) }}
-                                    </li>
-                                    @if (Request::segment(2) != null)
-                                        <li class="breadcrumb-item active" aria-current="page">
-                                            {{ Str::ucfirst(Request::segment(2)) }}
-                                        </li>
-                                    @endisset
-                                    @if (Request::segment(3) != null)
-                                        <li class="breadcrumb-item active" aria-current="page">
-                                            {{ Str::ucfirst(Request::segment(3)) }}
-                                        </li>
-                                    @endisset
-                        </ol>
-                    </nav>
+                            <div class="page-breadcrumb p-0 m-0">
+                                <div class="col-12 d-flex no-block align-items-center">
+                                    <h4 class="page-title">@yield('namepage')</h4>
+                                    <div class="ms-auto text-end">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">
+                                                    {{ Str::ucfirst(Request::segment(1)) }}
+                                                </li>
+                                                @if (Request::segment(2) != null)
+                                                    <li class="breadcrumb-item active" aria-current="page">
+                                                        {{ Str::ucfirst(Request::segment(2)) }}
+                                                    </li>
+                                                @endisset
+                                                @if (Request::segment(3) != null)
+                                                    <li class="breadcrumb-item active" aria-current="page">
+                                                        {{ Str::ucfirst(Request::segment(3)) }}
+                                                    </li>
+                                                @endisset
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div> --}}
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            @yield('content')
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved {{ env('APP_EMPLOYE') }} <a href="#">{{ env('APP_NAME') }}</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
         </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Container fluid  -->
+    <!-- All Jquery -->
     <!-- ============================================================== -->
-    @yield('content')
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved {{ env('APP_EMPLOYE') }} <a href="#">{{ env('APP_NAME') }}</a>.
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Wrapper -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- All Jquery -->
-<!-- ============================================================== -->
-@includeIf('basetemplate.footer-script')
+    @includeIf('basetemplate.footer-script')
 </body>
 
 </html>
